@@ -1,8 +1,16 @@
 For use on the Eastern Sun Resurrected mod for Diablo 2 via the D2RLAN launcher. 
 
+* Installation *
+  1) Download the filter lua file
+  2) On the D2RLAN launcher, go to options, loot filter
+  3) Load filter, find the file you downloaded
+  4) Apply filter
+  5) You can verify it's loaded in game by using the D2RHUD relad filter keybind
+  
+* Description *
 - Should highlight crafting mats
 - Should notify in game chat for things to look out for
-- This has 3 filter levels, you need to setup a hotkey in D2RHUD to cycle the filter level
+- This has 3 filter levels, you need to setup a hotkey in D2RHUD to cycle the filter level, defaults to leveling
   - Leveling = will show just about everything minus crap
   - Strict = shows less crappy bases, gold, etc
   - Very-strict = no blues, no bad bases, no potions, etc
