@@ -1,5 +1,4 @@
-<img width="421" height="80" alt="image" src="https://github.com/user-attachments/assets/fe4425af-6d27-47b6-87c3-30971f3036c1" />
-
+<img width="600" height="120" alt="image" src="https://github.com/user-attachments/assets/fe4425af-6d27-47b6-87c3-30971f3036c1" />
 
 For use on the Eastern Sun Resurrected mod for Diablo 2 via the D2RLAN launcher. 
 
