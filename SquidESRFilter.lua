@@ -12,11 +12,11 @@ return {
     {
 
     -- Debugging codes
-    {   
-        codes = "allitems",
-        location = {"onplayer", "atvendor"},
-        suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
-    },
+    --{   
+    --    codes = "allitems",
+    --    location = {"onplayer", "atvendor"},
+    --    suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
+    --},
 
     -- Consumables
     -- Hide utility potions
@@ -653,3 +653,4 @@ return {
     
     }
 }
+
