@@ -1,13 +1,14 @@
---- Filter Title: SquidFilter Beta v03
+--- Filter Title: SquidFilter Beta-Audio v04
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta v03 [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v04 [{yellow}Reloaded{red}]",
     debug = false,
+    audioPlayback = true,
     allowOverrides = false,
     filter_titles = {"Leveling","Strict","Very-Strict"},
-    filter_level = 2,
+    filter_level = 3,
     rules = 
     {
 
@@ -145,6 +146,7 @@ return {
     {   
         code = "sdo",
         notify = "{Orange}>>> Mmm.. Donut <<<",
+        audio = "Socket donut",
         prefix = ">> ",
         name_override = "Socket Donut",
         suffix = " <<",
@@ -157,6 +159,7 @@ return {
     {   
         code = "map",
         notify = "{gold}>>> Crafting Drop <<<",
+        audio = "Maple Leaf",
         prefix = "{black}>>> ",
         name_override = "Maple Leaf",
         suffix = " <<<",
@@ -168,6 +171,7 @@ return {
     {   
         code = "qqq",
         notify = "{gold}>>> Crafting Drop <<<",
+        audio = "Anvil Stone",
         prefix = "{black}>>> ",
         name_override = "Anvil Stone",
         suffix = " <<<",
@@ -179,6 +183,7 @@ return {
     {   
         code = "elx",
         notify = "{gold}>>> Crafting Drop <<<",
+        audio = "Elixir",
         prefix = "{black}>>> ",
         name_override = "Elixir",
         suffix = " <<<",
@@ -190,19 +195,9 @@ return {
     {   
         code = "yyy",
         notify = "{gold}>>> Crafting Drop <<<",
+        audio = "Cookbook",
         prefix = "{black}>>> ",
         name_override = "Cookbook",
-        suffix = " <<<",
-        name_style = "Rainbow",
-        background = {0, 0, 0, 255},
-        --background_style = "Rainbow",
-        border = {255, 255, 255, 255, 5},
-    },
-    {   
-        code = "dfc",
-        notify = "{gold}>>> Crafting Drop <<<",
-        prefix = "{black}>>> ",
-        name_override = "Devil's Food",
         suffix = " <<<",
         name_style = "Rainbow",
         background = {0, 0, 0, 255},
@@ -214,6 +209,7 @@ return {
     {   
         code = "fkn",
         --notify = "",
+        audio = "Cash Money",
         prefix = "{black}$$$ ",
         name_override = "Fake Note",
         suffix = " $$$",
@@ -225,6 +221,7 @@ return {
     {   
         code = "ore",
         --notify = "",
+        audio = "Cash Money",
         prefix = "{black}$$$ ",
         name_override = "Ore",
         suffix = " $$$",
@@ -236,6 +233,7 @@ return {
     {   
         code = "p04",
         --notify = "",
+        audio = "Experience",
         prefix = "{black}[XP] ",
         name_override = "Nervana Grass",
         suffix = " [XP]",
@@ -249,6 +247,7 @@ return {
     {   
         code = "wss",
         notify = "WORLDSTAR",
+        audio = "World Stone Shard",
         prefix = "{black}>>> ",
         name_override = "Worldstone Shard",
         suffix = " <<<",
@@ -348,6 +347,7 @@ return {
     {   
         code = "um7",
         notify = "Annoint this, annoint that, gosh..",
+        audio = "Orb of Annointment",
         prefix = ">>> ",
         name_override = "Orb of Annointment",
         suffix = " <<<",
@@ -381,6 +381,7 @@ return {
     {   
         code = "um8",
         notify = "Why you crying dear?",
+        audio = "Lilith Tear",
         prefix = ">>> ",
         name_override = "Lilith's Crystallized Tear",
         suffix = " <<<",
@@ -392,6 +393,7 @@ return {
     {   
         code = "um9",
         notify = "I found a feather",
+        audio = "Tie Real Feather",
         prefix = ">>> ",
         name_override = "Tyreal's Eternal Feather",
         suffix = " <<<",
@@ -461,6 +463,7 @@ return {
     {   
         codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         notify = "How are your maps?",
+        audio = "Map",
         prefix = "{white}>>> ",
         name_override = "Map",
         suffix = " <<<",
@@ -473,21 +476,26 @@ return {
     -- Notify high rune drops
     {
         notify = "High LOD Rune Decal!",
+        audio = "High LOD Rune",
         codes = {"23l","24l","25l","26l","27l","28l","29l","30l","31l","32l","33l"}
+        
     },
     {
         notify = "High ESR Rune!",
+        audio = "High ESR Rune",
         codes = {"r43","r44","r45","r46","r84","r85","r86","r87","r88","r89","r90","r91","r92","r93","r94","r95","r96","r97"}
     },
 
     -- Notify unique rings, amulets, charms
     {
         notify = "Bling!",
+        audio = "Bling",
         quality = 7,
         codes = {"rin","amu","jew"}
     },
     {
         notify = "Charming!",
+        audio = "Charm",
         quality = 7,
         codes = {"cm1","cm2","cm3"}
     },
