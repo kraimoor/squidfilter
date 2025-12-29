@@ -1,9 +1,9 @@
---- Filter Title: SquidFilter Beta-Audio v04
+--- Filter Title: SquidFilter Beta-Audio v05
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta-Audio v04 [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v05 [{yellow}Reloaded{red}]",
     debug = false,
     audioPlayback = true,
     allowOverrides = false,
@@ -14,7 +14,7 @@ return {
 
     -- Debugging codes
     --{   
-    --    codes = "allitems",
+    --   codes = "allitems",
     --    location = {"onplayer", "atvendor"},
     --    suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
     --},
@@ -500,6 +500,17 @@ return {
         codes = {"cm1","cm2","cm3"}
     },
 
+    -- hightlight mythical items
+    {
+        codes = {"7wd","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","mam","mrn","m10","m06","m20","m15",},
+        notify = "Mythical drop!!",
+        audio = "Mythic Item",
+        name_style = "Rainbow",
+        background = {0, 0, 0, 255},
+        --background_style = "Rainbow",
+        border = {255, 0, 0, 255, 8},
+    },
+
 
 
     -- Subjective Filtering Logic Begins
@@ -722,6 +733,8 @@ return {
         location = {"onground"},
         suffix = " {lilac}[{sockets}]"
     },
+
+
 
 
     --armor n codes {"cap","skp","hlm","fhl","ghm","crn","msk","qui","lea","hla","stu","rng","scl","chn","brs","spl","plt","fld","gth","ful","aar","ltp","buc","sml","lrg","kit","tow","gts","lgl","vgl","mgl","tgl","hgl","lbt","vbt","mbt","tbt","hbt","bhm","bsh","spk","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr1","dr2","dr3","dr4","dr5","ba1","ba2","ba3","ba4","ba5","pa1","pa2","pa3","pa4","pa5","ne1","ne2","ne3","ne4","ne5","ci0","ci1","ci2","ci3","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","cix","eht","xht","yht","dwc","xdw","ydw","clk","xlk","ylk","rob","xrb","yrb","shl","xhh","yhh","elv","xlv","ylv","fts","xft","yft","irg","xig","yig","dbt","xbt","ybt","ci4","m06","m15","m20"}
