@@ -1,13 +1,13 @@
---- Filter Title: SquidFilter Beta-Audio v06
+--- Filter Title: SquidFilter Beta-Audio v07
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta-Audio v06 [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v07 [{yellow}Reloaded{red}]",
     debug = false,
     audioPlayback = true,
     allowOverrides = false,
-    filter_titles = {"Leveling","Strict","Very-Strict"},
+    filter_titles = {"Leveling","Strict","Very-Strict","Uber-Strict"},
     filter_level = 3,
     rules = 
     {
@@ -36,10 +36,16 @@ return {
         hide = true,
         filter_levels = 2
     },
-        {
+    {
         codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
         hide = true,
         filter_levels = 3
+    },
+    
+    {
+        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
+        hide = true,
+        filter_levels = 4
     },
 
     -- Small Rejuv
@@ -98,7 +104,6 @@ return {
     {
         codes = {"jew","cm1","cm2","cm3"},
         quality = "6",
-        hide = false,
         border = {200, 200, 100, 255, 1},
     },
 
@@ -118,6 +123,14 @@ return {
         suffix = " <",
         background = {0, 0, 0, 255},
         border = {200, 200, 100, 255, 1},
+    },
+
+    -- Hide Decpihers for uber-strict
+
+    {   
+        code = "ddd",
+        hide = true,
+        filter_levels = 4
     },
 
     -- D-Stones
@@ -146,7 +159,6 @@ return {
     {   
         code = "sdo",
         notify = "{Orange}>>> Mmm.. Donut <<<",
-        audio = "Socket donut",
         prefix = ">> ",
         name_override = "Socket Donut",
         suffix = " <<",
@@ -209,7 +221,6 @@ return {
     {   
         code = "fkn",
         --notify = "",
-        audio = "Cash Money",
         prefix = "{black}$$$ ",
         name_override = "Fake Note",
         suffix = " $$$",
@@ -221,7 +232,6 @@ return {
     {   
         code = "ore",
         --notify = "",
-        audio = "Cash Money",
         prefix = "{black}$$$ ",
         name_override = "Ore",
         suffix = " $$$",
@@ -233,7 +243,6 @@ return {
     {   
         code = "p04",
         --notify = "",
-        audio = "Experience",
         prefix = "{black}[XP] ",
         name_override = "Nervana Grass",
         suffix = " [XP]",
@@ -247,7 +256,6 @@ return {
     {   
         code = "wss",
         notify = "WORLDSTAR",
-        audio = "World Stone Shard",
         prefix = "{black}>>> ",
         name_override = "Worldstone Shard",
         suffix = " <<<",
@@ -357,28 +365,6 @@ return {
         border = {255, 255, 255, 255, 8},
     },
     {   
-        code = "mam",
-        notify = "Good Mythical Amulet",
-        prefix = ">>> ",
-        name_override = "Mythical Amulet",
-        suffix = " <<<",
-        name_style = "Rainbow Group",
-        background = {255, 127, 127, 255},
-        --background_style = "Rainbow",
-        border = {255, 255, 255, 255, 8},
-    },
-    {   
-        code = "mrn",
-        notify = "Good Mythical Ring",
-        prefix = ">>> ",
-        name_override = "Mythical Ring",
-        suffix = " <<<",
-        name_style = "Rainbow Group",
-        background = {255, 127, 127, 255},
-        --background_style = "Rainbow",
-        border = {255, 255, 255, 255, 8},
-    },
-    {   
         code = "um8",
         notify = "Why you crying dear?",
         audio = "Lilith Tear",
@@ -405,6 +391,7 @@ return {
     {   
         code = "u17",
         notify = "Luci I'm home",
+        audio = "Lucy On Essence",
         prefix = ">>> ",
         name_override = "Lucion Essence",
         suffix = " <<<",
@@ -416,6 +403,7 @@ return {
     {   
         code = "u18",
         notify = "Luci what is the world is this",
+        audio = "Lucy On Fiery Relic",
         prefix = ">>> ",
         name_override = "Lucion Fiery Relic",
         suffix = " <<<",
@@ -426,11 +414,10 @@ return {
     },
     {   
         code = "u19",
-        notify = "The Prime Stone",
-        prefix = ">>> ",
+        prefix = "> ",
         name_override = "Primordial Soulstone",
-        suffix = " <<<",
-        name_style = "Rainbow",
+        suffix = " <",
+        --name_style = "Rainbow",
         background = {255, 255, 255, 255},
         --background_style = "Rainbow",
         border = {255, 255, 255, 255, 8},
@@ -438,6 +425,7 @@ return {
     {   
         code = "u20",
         notify = "Astro, you gave me your heart?",
+        audio = "Astro Gha Petrified Heart",
         prefix = ">>> ",
         name_override = "Astrogha's Petrified Heart",
         suffix = " <<<",
@@ -653,7 +641,6 @@ return {
         border = {255, 127, 0, 255, 8},
     },
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z15",
         notify = "Map Dropped",
         audio = "Map",
@@ -666,7 +653,6 @@ return {
         border = {255, 127, 0, 255, 8},
     },
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z16",
         notify = "Map Dropped",
         audio = "Map",
@@ -682,7 +668,6 @@ return {
     -- Tier 5
 
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z17",
         notify = "Map Dropped",
         audio = "Map",
@@ -695,7 +680,6 @@ return {
         border = {255, 0, 0, 255, 8},
     },
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z18",
         notify = "Map Dropped",
         audio = "Map",
@@ -708,7 +692,6 @@ return {
         border = {255, 0, 0, 255, 8},
     },
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z19",
         notify = "Map Dropped",
         audio = "Map",
@@ -721,7 +704,6 @@ return {
         border = {255, 0, 0, 255, 8},
     },
     {   
-    --    codes = {"z01","z02","z03","z04","z05","z06","z07","z08","z09","z10","z11","z12","z13","z14","z15","z16","z17","z18","z19","z20"},
         code = "z20",
         notify = "Map Dropped",
         audio = "Map",
@@ -753,7 +735,7 @@ return {
         notify = "Bling!",
         audio = "Bling",
         quality = 7,
-        codes = {"rin","amu","jew"}
+        codes = {"amu","rin","zrn","srn","nrn","prn","brg","drn","arn"},
     },
     {
         notify = "Charming!",
@@ -762,17 +744,65 @@ return {
         codes = {"cm1","cm2","cm3"}
     },
 
-    -- hightlight mythical items
+    -- hightlight mythical unique items
     {
         codes = {"7wd","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","mam","mrn","m10","m06","m20","m15",},
         quality = "7",
         notify = "Mythical drop!!",
-        audio = "Mythic Item",
+        audio = "Mythic Unique",
         name_style = "Rainbow",
         background = {0, 0, 0, 255},
         --background_style = "Rainbow",
         border = {255, 0, 0, 255, 8},
     },
+
+    -- hightlight mythical unique items
+    {
+        codes = {"7wd","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","mam","mrn","m10","m06","m20","m15",},
+        quality = "4-",
+        notify = "Mythical Base!!",
+        name_style = "Rainbow Group",
+        background = {0, 0, 0, 255},
+        --background_style = "Rainbow",
+        border = {255, 0, 0, 255, 8},
+    },
+
+
+
+    
+    -- Armor/Weap Decal Highlights
+
+    {   
+        codes = {"01c","02c","03c","04c","05c","06c","07c","08c","09c","10c","11c","12c","13c","14c","15c","16c","17c","18c","19c","20c","21c","22c","23c","24c","25c","26c","27c","28c","29c","30c","31c","32c","33c","34c","35c","36c","37c","38c","39c","40c","41c","42c","43c","44c","45c","46c","01f","02f","03f","04f","05f","06f","07f","08f","09f","10f","11f","12f","13f","14f","15f","16f","17f","18f","19f","20f","21f","22f","23f","24f","25f","26f","27f","28f","29f","30f","31f","32f","33f","34f","35f","36f","37f","38f","39f","40f","41f","42f","43f","44f","45f","46f","47f","48f","49f","50f","51f","52f","53f","54f","55f","56f","57f","58f","59f","60f","61f","62f","63f","64f","65f","66f","67f","68f","69f","70f","71f","01i","02i","03i","01j","02j","03j","04j"},
+        prefix = "{gold}[N] ",
+        --name_override = "Normal Coupon",
+        --suffix = " <",
+        --name_style = "Rainbow",
+        background = {0, 0, 0, 255},
+        --background_style = "Rainbow",
+        border = {0, 255, 0, 255, 3},
+    },
+    {   
+        codes = {"01d","02d","03d","04d","05d","06d","07d","08d","09d","10d","11d","12d","13d","14d","15d","16d","17d","18d","19d","20d","21d","22d","23d","24d","25d","26d","27d","28d","29d","30d","31d","32d","33d","34d","35d","36d","37d","38d","39d","40d","41d","42d","43d","44d","45d","46d","47d","48d","49d","50d","01g","02g","03g","04g","05g","06g","07g","08g","09g","10g","11g","12g","13g","14g","15g","16g","17g","18g","19g","20g","21g","22g","23g","24g","25g","26g","27g","28g","29g","30g","31g","32g","33g","34g","35g","36g","37g","38g","39g","40g","41g","42g","43g","44g","45g","46g","47g","48g","49g","50g","51g","52g","53g","54g","55g","56g","57g","58g","59g","60g","61g","62g","63g","64g","65g","66g","67g","68g","69g","70g","71g","72g","73g","74g","75g","76g","77g","78g","05i","06i","07i","08i","05j","06j","07j","08j","04i"},
+        prefix = "{gold}[NM] ",
+        --name_override = "Normal Coupon",
+        --suffix = " <",
+        --name_style = "Rainbow",
+        background = {0, 0, 0, 255},
+        --background_style = "Rainbow",
+        border = {255, 255, 0, 255, 3},
+    },
+    {   
+        codes = {"01e","02e","03e","04e","05e","06e","07e","08e","09e","10e","11e","12e","13e","14e","15e","16e","17e","18e","19e","20e","21e","22e","23e","24e","25e","26e","27e","28e","29e","30e","31e","32e","33e","34e","35e","36e","37e","38e","39e","40e","41e","01h","02k","03h","04h","05h","06h","07h","08h","09h","10h","11h","12k","13h","14h","15h","16h","17h","18h","19h","20h","21h","22k","23h","24h","25h","26h","27h","28h","29h","30h","31h","32k","33h","34h","35h","36h","37h","38h","39h","40h","41h","42k","43h","44h","45h","46h","47h","48h","49h","50h","51h","52k","53h","54h","55h","56h","57h","58h","59h","60h","61h","62k","09i","10i","11i","12i","09j","10j"},        
+        prefix = "{gold}[H] ",
+        --name_override = "Normal Coupon",
+        --suffix = " <",
+        --name_style = "Rainbow",
+        background = {0, 0, 0, 255},
+        --background_style = "Rainbow",
+        border = {255, 0, 0, 255, 3},
+    },
+
 
 
 
@@ -812,6 +842,12 @@ return {
         hide = true,
         filter_levels = 3
     },
+    {
+        codes = {"cap","skp","hlm","fhl","ghm","crn","msk","qui","lea","hla","stu","rng","scl","chn","brs","spl","plt","fld","gth","ful","aar","ltp","buc","sml","lrg","kit","tow","gts","lgl","vgl","mgl","tgl","hgl","lbt","vbt","mbt","tbt","hbt","bhm","bsh","spk","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr1","dr2","dr3","dr4","dr5","ba1","ba2","ba3","ba4","ba5","pa1","pa2","pa3","pa4","pa5","ne1","ne2","ne3","ne4","ne5","ci0","ci1","ci2","ci3","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","cix","eht","xht","yht","dwc","xdw","ydw","clk","xlk","ylk","rob","xrb","yrb","shl","xhh","yhh","elv","xlv","ylv","fts","xft","yft","irg","xig","yig","dbt","xbt","ybt","ci4","m06","m15","m20","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","ci1","ci4","4ap","4kp","4lm","4hl","4hm","4rn","4sk","4ui","4ea","4la","4tu","4ng","4cl","4hn","4rs","4pl","4lt","4ld","4th","4ul","4ar","4tp","4uc","4ml","4rg","4it","4ow","4ts","4lg","4vg","4mg","4tg","4hg","4lb","4vb","4mb","4tb","4hb","4h9","4sh","4pk","xht","xdw","xlk","xrb","xhh","xlv","xft","xig","xbt","qi2","ci2","qba","qda","qna","qp9","m06","m15","m20","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","ci3","ci2","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","yht","ydw","ylk","yrb","yhh","ylv","yft","yig","ybt","qi3","qdb","qnf","qbc","qbd","qbe","qdd","qde","qne","qpc","qpe","m06","m15","m20","hax","axe","2ax","mpi","wax","lax","bax","btx","gax","gix","wnd","ywn","bwn","gwn","clb","scp","gsc","wsp","spc","mac","mst","fla","whm","mau","gma","ssd","scm","sbr","flc","crs","bsd","lsd","wsd","2hs","clm","gis","bsw","flb","gsd","dgr","dir","kri","bld","tkf","tax","bkf","bal","jav","pil","ssp","glv","tsp","spr","tri","brn","spt","pik","bar","vou","scy","pax","hal","wsc","sst","lst","cst","bst","wst","sbw","hbw","lbw","cbw","sbb","lbb","swb","lwb","lxb","mxb","hxb","rxb","gps","ops","gpm","opm","gpl","opl","d33","g33","leg","hdm","hfh","hst","msf","ktr","wrb","axf","ces","clw","btl","skr","p01","p02","p03","p04","p05","p06","p07","p08","p09","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30","p31","p32","p33","p34","p35","p36","p37","p38","p39","p40","p41","p42","p43","p44","p45","p46","p47","p48","p49","p50","p51","p52","p53","p54","p55","p56","p57","p58","p59","p60","p61","p62","p63","p64","p65","p66","p67","p68","p69","p70","p71","ob1","ob2","ob3","ob4","ob5","am1","am2","am3","am4","am5","aq2","cq2","gsp","apb","nin","njt","bts","shc","nrd","nsy","syn","pbe","mnb","kkl","arm","q1a","q1b","q1c","q1d","q1e","q1f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","cr2","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","9ha","9ax","92a","9mp","9wa","9la","9ba","9bt","9ga","9gi","9wn","9yw","9bw","9gw","9cl","9sc","9qs","9ws","9sp","9ma","9mt","9fl","9wh","9m9","9gm","9ss","9sm","9sb","9fc","9cr","9bs","9ls","9wd","92h","9cm","9gs","9b9","9fb","9gd","9dg","9di","9kr","9bl","9tk","9ta","9bk","9b8","9ja","9pi","9s9","9gl","9ts","9sr","9tr","9br","9st","9p9","9b7","9vo","9s8","9pa","9h9","9wc","8ss","8ls","8cs","8bs","8ws","8sb","8hb","8lb","8cb","8s8","8l8","8sw","8lw","8lx","8mx","8hx","8rx","9ar","9wb","9xf","9cs","9lw","9tw","9qr","q00","q01","q02","q03","q04","q05","q06","q07","q08","q09","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q77","q78","q79","q83","ob6","ob7","ob8","ob9","oba","am6","am7","am8","am9","ama","aq2","cq2","9gp","9pb","9nn","9nj","9xb","9sh","9rd","9ns","9sy","9be","9mn","9kl","9rm","q2a","q2b","q2c","q2d","q2e","q2f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","0ha","0ax","82a","0mp","0wa","0la","0ba","0bt","0ga","0gi","0wn","0yw","0bw","0gw","0cl","5sc","0qs","0ws","0sp","0ma","0mt","0fl","0wh","0m0","0gm","0ss","0sm","0sb","0fc","0cr","0bs","0ls","0wd","02h","0cm","0gs","0b0","0fb","0gd","0dg","0di","0kr","0bl","0tk","0ta","0bk","0b6","0ja","0pi","0s9","0gl","0ts","0sr","0tr","0br","0st","0p0","0b7","0vo","0s8","0pa","0h0","0wc","1ss","1ls","1cs","1bs","1ws","1sb","1hb","1lb","1cb","1s8","1l8","1sw","1lw","1lx","1mx","1hx","1rx","7ar","7wb","7xf","7cs","7lw","7tw","7qr","7ha","7ax","72a","7mp","7wa","7la","7ba","7bt","7ga","7gi","7wn","7yw","7bw","7gw","7cl","7sc","7qs","7ws","7sp","7ma","7mt","7fl","7wh","7m7","7gm","7ss","7sm","7sb","7fc","7cr","7bs","7ls","7wd","72h","7cm","7gs","7b7","7fb","7gd","7dg","7di","7kr","7bl","7tk","7ta","7bk","7b8","7ja","7pi","7s7","7gl","7ts","7sr","7tr","7br","7st","7p7","7o7","7vo","7s8","7pa","7h7","7wc","6ss","6ls","6cs","6bs","6ws","6sb","6hb","6lb","6cb","6s7","6l7","6sw","6lw","6lx","6mx","6hx","6rx","obb","obc","obd","obe","obf","amb","amc","amd","ame","amf","aq2","cq2","0gp","0pb","0nn","0xb","0sh","0rd","0ns","0sy","0be","0mn","7tw","q74","q75","q76","q80","q81","q82","q84","q85","0kl","0rm","q3a","q3b","q3c","q3d","q3e","q3f","q4a","q4b","q4c","q4d","q4e","q4f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","lbl","vbl","mbl","tbl","hbl","lbl","vbl","mbl","tbl","hbl","3lb","3vb","3mb","3tb","alb","avb","bmb","atb","ahb","alb","avb","bmb","atb","ahb","ulc","uvc","umc","utc","uhc","alb","avb","bmb","atb","ahb","yms","yms","yms","ulc","uvc","umc","utc","uhc","ulc","uvc","umc","utc","uhc","m10","zlb","zvb","zmb","ztb","zhb","zlb","zvb","zmb","ztb","zhb","5lb","5vb","5mb","5tb","5hb","zlb","zvb","zmb","ztb","zhb","xms","xms","xms","5lb","5vb","5mb","5tb","5hb","5lb","5vb","5mb","5tb","5hb","m10","3hb","lbl","vbl","mbl","tbl","hbl","msb","msb","msb","3lb","3vb","3mb","3tb","3hb","3lb","3vb","3mb","3tb","3hb","m10"},
+        quality = 2,
+        hide = true,
+        filter_levels = 4
+    },
 
     -- Hide unwanted magic armor/weapons
     -- Highs all blue armor and weapons 
@@ -833,48 +869,94 @@ return {
         hide = true,
         filter_levels = 3
     },
+    
+    {
+        codes = {"cap","skp","hlm","fhl","ghm","crn","msk","qui","lea","hla","stu","rng","scl","chn","brs","spl","plt","fld","gth","ful","aar","ltp","buc","sml","lrg","kit","tow","gts","lgl","vgl","mgl","tgl","hgl","lbt","vbt","mbt","tbt","hbt","bhm","bsh","spk","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr1","dr2","dr3","dr4","dr5","ba1","ba2","ba3","ba4","ba5","pa1","pa2","pa3","pa4","pa5","ne1","ne2","ne3","ne4","ne5","ci0","ci1","ci2","ci3","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","cix","eht","xht","yht","dwc","xdw","ydw","clk","xlk","ylk","rob","xrb","yrb","shl","xhh","yhh","elv","xlv","ylv","fts","xft","yft","irg","xig","yig","dbt","xbt","ybt","ci4","m06","m15","m20","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","ci1","ci4","4ap","4kp","4lm","4hl","4hm","4rn","4sk","4ui","4ea","4la","4tu","4ng","4cl","4hn","4rs","4pl","4lt","4ld","4th","4ul","4ar","4tp","4uc","4ml","4rg","4it","4ow","4ts","4lg","4vg","4mg","4tg","4hg","4lb","4vb","4mb","4tb","4hb","4h9","4sh","4pk","xht","xdw","xlk","xrb","xhh","xlv","xft","xig","xbt","qi2","ci2","qba","qda","qna","qp9","m06","m15","m20","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","ci3","ci2","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","yht","ydw","ylk","yrb","yhh","ylv","yft","yig","ybt","qi3","qdb","qnf","qbc","qbd","qbe","qdd","qde","qne","qpc","qpe","m06","m15","m20","hax","axe","2ax","mpi","wax","lax","bax","btx","gax","gix","wnd","ywn","bwn","gwn","clb","scp","gsc","wsp","spc","mac","mst","fla","whm","mau","gma","ssd","scm","sbr","flc","crs","bsd","lsd","wsd","2hs","clm","gis","bsw","flb","gsd","dgr","dir","kri","bld","tkf","tax","bkf","bal","jav","pil","ssp","glv","tsp","spr","tri","brn","spt","pik","bar","vou","scy","pax","hal","wsc","sst","lst","cst","bst","wst","sbw","hbw","lbw","cbw","sbb","lbb","swb","lwb","lxb","mxb","hxb","rxb","gps","ops","gpm","opm","gpl","opl","d33","g33","leg","hdm","hfh","hst","msf","ktr","wrb","axf","ces","clw","btl","skr","p01","p02","p03","p04","p05","p06","p07","p08","p09","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30","p31","p32","p33","p34","p35","p36","p37","p38","p39","p40","p41","p42","p43","p44","p45","p46","p47","p48","p49","p50","p51","p52","p53","p54","p55","p56","p57","p58","p59","p60","p61","p62","p63","p64","p65","p66","p67","p68","p69","p70","p71","ob1","ob2","ob3","ob4","ob5","am1","am2","am3","am4","am5","aq2","cq2","gsp","apb","nin","njt","bts","shc","nrd","nsy","syn","pbe","mnb","kkl","arm","q1a","q1b","q1c","q1d","q1e","q1f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","cr2","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","9ha","9ax","92a","9mp","9wa","9la","9ba","9bt","9ga","9gi","9wn","9yw","9bw","9gw","9cl","9sc","9qs","9ws","9sp","9ma","9mt","9fl","9wh","9m9","9gm","9ss","9sm","9sb","9fc","9cr","9bs","9ls","9wd","92h","9cm","9gs","9b9","9fb","9gd","9dg","9di","9kr","9bl","9tk","9ta","9bk","9b8","9ja","9pi","9s9","9gl","9ts","9sr","9tr","9br","9st","9p9","9b7","9vo","9s8","9pa","9h9","9wc","8ss","8ls","8cs","8bs","8ws","8sb","8hb","8lb","8cb","8s8","8l8","8sw","8lw","8lx","8mx","8hx","8rx","9ar","9wb","9xf","9cs","9lw","9tw","9qr","q00","q01","q02","q03","q04","q05","q06","q07","q08","q09","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q77","q78","q79","q83","ob6","ob7","ob8","ob9","oba","am6","am7","am8","am9","ama","aq2","cq2","9gp","9pb","9nn","9nj","9xb","9sh","9rd","9ns","9sy","9be","9mn","9kl","9rm","q2a","q2b","q2c","q2d","q2e","q2f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","0ha","0ax","82a","0mp","0wa","0la","0ba","0bt","0ga","0gi","0wn","0yw","0bw","0gw","0cl","5sc","0qs","0ws","0sp","0ma","0mt","0fl","0wh","0m0","0gm","0ss","0sm","0sb","0fc","0cr","0bs","0ls","0wd","02h","0cm","0gs","0b0","0fb","0gd","0dg","0di","0kr","0bl","0tk","0ta","0bk","0b6","0ja","0pi","0s9","0gl","0ts","0sr","0tr","0br","0st","0p0","0b7","0vo","0s8","0pa","0h0","0wc","1ss","1ls","1cs","1bs","1ws","1sb","1hb","1lb","1cb","1s8","1l8","1sw","1lw","1lx","1mx","1hx","1rx","7ar","7wb","7xf","7cs","7lw","7tw","7qr","7ha","7ax","72a","7mp","7wa","7la","7ba","7bt","7ga","7gi","7wn","7yw","7bw","7gw","7cl","7sc","7qs","7ws","7sp","7ma","7mt","7fl","7wh","7m7","7gm","7ss","7sm","7sb","7fc","7cr","7bs","7ls","7wd","72h","7cm","7gs","7b7","7fb","7gd","7dg","7di","7kr","7bl","7tk","7ta","7bk","7b8","7ja","7pi","7s7","7gl","7ts","7sr","7tr","7br","7st","7p7","7o7","7vo","7s8","7pa","7h7","7wc","6ss","6ls","6cs","6bs","6ws","6sb","6hb","6lb","6cb","6s7","6l7","6sw","6lw","6lx","6mx","6hx","6rx","obb","obc","obd","obe","obf","amb","amc","amd","ame","amf","aq2","cq2","0gp","0pb","0nn","0xb","0sh","0rd","0ns","0sy","0be","0mn","7tw","q74","q75","q76","q80","q81","q82","q84","q85","0kl","0rm","q3a","q3b","q3c","q3d","q3e","q3f","q4a","q4b","q4c","q4d","q4e","q4f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","lbl","vbl","mbl","tbl","hbl","lbl","vbl","mbl","tbl","hbl","3lb","3vb","3mb","3tb","alb","avb","bmb","atb","ahb","alb","avb","bmb","atb","ahb","ulc","uvc","umc","utc","uhc","alb","avb","bmb","atb","ahb","yms","yms","yms","ulc","uvc","umc","utc","uhc","ulc","uvc","umc","utc","uhc","m10","zlb","zvb","zmb","ztb","zhb","zlb","zvb","zmb","ztb","zhb","5lb","5vb","5mb","5tb","5hb","zlb","zvb","zmb","ztb","zhb","xms","xms","xms","5lb","5vb","5mb","5tb","5hb","5lb","5vb","5mb","5tb","5hb","m10","3hb","lbl","vbl","mbl","tbl","hbl","msb","msb","msb","3lb","3vb","3mb","3tb","3hb","3lb","3vb","3mb","3tb","3hb","m10"},
+        quality = 4,
+        hide = true,
+        filter_levels = 4
+    },
 
     -- Hide jewels and charms based on strictness
             
     {
-        codes = {"jew","cm1","cm2","cm3"},
+        codes = {"jew","cm1","cm2","cm3","cx1","cx2","cx3"},
         quality = 4,
         hide = false,
         filter_levels = 1
     },
     {
-        codes = {"jew","cm1","cm2","cm3"},
+        codes = {"jew","cm1","cm2","cm3","cx1","cx2","cx3"},
         quality = 4,
         hide = false,
         filter_levels = 2
     },
     {
-        codes = {"jew","cm1","cm2","cm3"},
+        codes = {"jew","cm1","cm2","cm3","cx1","cx2","cx3"},
         quality = 4,
         hide = true,
         filter_levels = 3
+    },    
+    {
+        codes = {"jew","cm1","cm2","cm3","cx1","cx2","cx3"},
+        quality = 4,
+        hide = true,
+        filter_levels = 4
     },
 
-    -- Hide rings and amulets based on strictness
+    -- Hide magic rings and amulets based on strictness
             
     {
-        codes = {"amu","rin"},
+        codes = {"amu","rin","zrn","srn","nrn","prn","brg","drn","arn"},
         quality = 4,
         hide = false,
         filter_levels = 1
     },
     {
-        codes = {"amu","rin"},
+        codes = {"amu","rin","zrn","srn","nrn","prn","brg","drn","arn"},
         quality = 4,
         hide = false,
         filter_levels = 2
     },
     {
-        codes = {"amu","rin"},
+        codes = {"amu","rin","zrn","srn","nrn","prn","brg","drn","arn"},
         quality = 4,
         hide = true,
         filter_levels = 3
     },
+    
+    {
+        codes = {"amu","rin","zrn","srn","nrn","prn","brg","drn","arn"},
+        quality = 4,
+        hide = true,
+        filter_levels = 4
+    },
+
+    -- Uber-strict rules, hide sets, hide all non-mythical bases
+
+    {
+        codes = "allitems",
+        quality = 5,
+        hide = true,
+        filter_levels = 4
+    }, 
+    {
+        codes = {"cap","skp","hlm","fhl","ghm","crn","msk","qui","lea","hla","stu","rng","scl","chn","brs","spl","plt","fld","gth","ful","aar","ltp","buc","sml","lrg","kit","tow","gts","lgl","vgl","mgl","tgl","hgl","lbt","vbt","mbt","tbt","hbt","bhm","bsh","spk","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr1","dr2","dr3","dr4","dr5","ba1","ba2","ba3","ba4","ba5","pa1","pa2","pa3","pa4","pa5","ne1","ne2","ne3","ne4","ne5","ci0","ci1","ci2","ci3","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","cix","eht","xht","yht","dwc","xdw","ydw","clk","xlk","ylk","rob","xrb","yrb","shl","xhh","yhh","elv","xlv","ylv","fts","xft","yft","irg","xig","yig","dbt","xbt","ybt","ci4","m06","m15","m20","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","ci1","ci4","4ap","4kp","4lm","4hl","4hm","4rn","4sk","4ui","4ea","4la","4tu","4ng","4cl","4hn","4rs","4pl","4lt","4ld","4th","4ul","4ar","4tp","4uc","4ml","4rg","4it","4ow","4ts","4lg","4vg","4mg","4tg","4hg","4lb","4vb","4mb","4tb","4hb","4h9","4sh","4pk","xht","xdw","xlk","xrb","xhh","xlv","xft","xig","xbt","qi2","ci2","qba","qda","qna","qp9","m06","m15","m20","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","ci3","ci2","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","yht","ydw","ylk","yrb","yhh","ylv","yft","yig","ybt","qi3","qdb","qnf","qbc","qbd","qbe","qdd","qde","qne","qpc","qpe","m06","m15","m20","hax","axe","2ax","mpi","wax","lax","bax","btx","gax","gix","wnd","ywn","bwn","gwn","clb","scp","gsc","wsp","spc","mac","mst","fla","whm","mau","gma","ssd","scm","sbr","flc","crs","bsd","lsd","wsd","2hs","clm","gis","bsw","flb","gsd","dgr","dir","kri","bld","tkf","tax","bkf","bal","jav","pil","ssp","glv","tsp","spr","tri","brn","spt","pik","bar","vou","scy","pax","hal","wsc","sst","lst","cst","bst","wst","sbw","hbw","lbw","cbw","sbb","lbb","swb","lwb","lxb","mxb","hxb","rxb","gps","ops","gpm","opm","gpl","opl","d33","g33","leg","hdm","hfh","hst","msf","ktr","wrb","axf","ces","clw","btl","skr","p01","p02","p03","p04","p05","p06","p07","p08","p09","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30","p31","p32","p33","p34","p35","p36","p37","p38","p39","p40","p41","p42","p43","p44","p45","p46","p47","p48","p49","p50","p51","p52","p53","p54","p55","p56","p57","p58","p59","p60","p61","p62","p63","p64","p65","p66","p67","p68","p69","p70","p71","ob1","ob2","ob3","ob4","ob5","am1","am2","am3","am4","am5","aq2","cq2","gsp","apb","nin","njt","bts","shc","nrd","nsy","syn","pbe","mnb","kkl","arm","q1a","q1b","q1c","q1d","q1e","q1f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","cr2","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","9ha","9ax","92a","9mp","9wa","9la","9ba","9bt","9ga","9gi","9wn","9yw","9bw","9gw","9cl","9sc","9qs","9ws","9sp","9ma","9mt","9fl","9wh","9m9","9gm","9ss","9sm","9sb","9fc","9cr","9bs","9ls","9wd","92h","9cm","9gs","9b9","9fb","9gd","9dg","9di","9kr","9bl","9tk","9ta","9bk","9b8","9ja","9pi","9s9","9gl","9ts","9sr","9tr","9br","9st","9p9","9b7","9vo","9s8","9pa","9h9","9wc","8ss","8ls","8cs","8bs","8ws","8sb","8hb","8lb","8cb","8s8","8l8","8sw","8lw","8lx","8mx","8hx","8rx","9ar","9wb","9xf","9cs","9lw","9tw","9qr","q00","q01","q02","q03","q04","q05","q06","q07","q08","q09","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q77","q78","q79","q83","ob6","ob7","ob8","ob9","oba","am6","am7","am8","am9","ama","aq2","cq2","9gp","9pb","9nn","9nj","9xb","9sh","9rd","9ns","9sy","9be","9mn","9kl","9rm","q2a","q2b","q2c","q2d","q2e","q2f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","0ha","0ax","82a","0mp","0wa","0la","0ba","0bt","0ga","0gi","0wn","0yw","0bw","0gw","0cl","5sc","0qs","0ws","0sp","0ma","0mt","0fl","0wh","0m0","0gm","0ss","0sm","0sb","0fc","0cr","0bs","0ls","0wd","02h","0cm","0gs","0b0","0fb","0gd","0dg","0di","0kr","0bl","0tk","0ta","0bk","0b6","0ja","0pi","0s9","0gl","0ts","0sr","0tr","0br","0st","0p0","0b7","0vo","0s8","0pa","0h0","0wc","1ss","1ls","1cs","1bs","1ws","1sb","1hb","1lb","1cb","1s8","1l8","1sw","1lw","1lx","1mx","1hx","1rx","7ar","7wb","7xf","7cs","7lw","7tw","7qr","7ha","7ax","72a","7mp","7wa","7la","7ba","7bt","7ga","7gi","7wn","7yw","7bw","7gw","7cl","7sc","7qs","7ws","7sp","7ma","7mt","7fl","7wh","7m7","7gm","7ss","7sm","7sb","7fc","7cr","7bs","7ls","7wd","72h","7cm","7gs","7b7","7fb","7gd","7dg","7di","7kr","7bl","7tk","7ta","7bk","7b8","7ja","7pi","7s7","7gl","7ts","7sr","7tr","7br","7st","7p7","7o7","7vo","7s8","7pa","7h7","7wc","6ss","6ls","6cs","6bs","6ws","6sb","6hb","6lb","6cb","6s7","6l7","6sw","6lw","6lx","6mx","6hx","6rx","obb","obc","obd","obe","obf","amb","amc","amd","ame","amf","aq2","cq2","0gp","0pb","0nn","0xb","0sh","0rd","0ns","0sy","0be","0mn","7tw","q74","q75","q76","q80","q81","q82","q84","q85","0kl","0rm","q3a","q3b","q3c","q3d","q3e","q3f","q4a","q4b","q4c","q4d","q4e","q4f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","lbl","vbl","mbl","tbl","hbl","lbl","vbl","mbl","tbl","hbl","3lb","3vb","3mb","3tb","alb","avb","bmb","atb","ahb","alb","avb","bmb","atb","ahb","ulc","uvc","umc","utc","uhc","alb","avb","bmb","atb","ahb","yms","yms","yms","ulc","uvc","umc","utc","uhc","ulc","uvc","umc","utc","uhc","m10","zlb","zvb","zmb","ztb","zhb","zlb","zvb","zmb","ztb","zhb","5lb","5vb","5mb","5tb","5hb","zlb","zvb","zmb","ztb","zhb","xms","xms","xms","5lb","5vb","5mb","5tb","5hb","5lb","5vb","5mb","5tb","5hb","m10","3hb","lbl","vbl","mbl","tbl","hbl","msb","msb","msb","3lb","3vb","3mb","3tb","3hb","3lb","3vb","3mb","3tb","3hb","m10"},
+        quality = 3,
+        hide = true,
+        filter_levels = 4
+    },
+    {
+        codes = {"cap","skp","hlm","fhl","ghm","crn","msk","qui","lea","hla","stu","rng","scl","chn","brs","spl","plt","fld","gth","ful","aar","ltp","buc","sml","lrg","kit","tow","gts","lgl","vgl","mgl","tgl","hgl","lbt","vbt","mbt","tbt","hbt","bhm","bsh","spk","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr1","dr2","dr3","dr4","dr5","ba1","ba2","ba3","ba4","ba5","pa1","pa2","pa3","pa4","pa5","ne1","ne2","ne3","ne4","ne5","ci0","ci1","ci2","ci3","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","cix","eht","xht","yht","dwc","xdw","ydw","clk","xlk","ylk","rob","xrb","yrb","shl","xhh","yhh","elv","xlv","ylv","fts","xft","yft","irg","xig","yig","dbt","xbt","ybt","ci4","m06","m15","m20","xap","xkp","xlm","xhl","xhm","xrn","xsk","xui","xea","xla","xtu","xng","xcl","xhn","xrs","xpl","xlt","xld","xth","xul","xar","xtp","xuc","xml","xrg","xit","xow","xts","xlg","xvg","xmg","xtg","xhg","xlb","xvb","xmb","xtb","xhb","xh9","xsh","xpk","dr6","dr7","dr8","dr9","dra","ba6","ba7","ba8","ba9","baa","pa6","pa7","pa8","pa9","paa","ne6","ne7","ne8","ne9","nea","ci1","ci4","4ap","4kp","4lm","4hl","4hm","4rn","4sk","4ui","4ea","4la","4tu","4ng","4cl","4hn","4rs","4pl","4lt","4ld","4th","4ul","4ar","4tp","4uc","4ml","4rg","4it","4ow","4ts","4lg","4vg","4mg","4tg","4hg","4lb","4vb","4mb","4tb","4hb","4h9","4sh","4pk","xht","xdw","xlk","xrb","xhh","xlv","xft","xig","xbt","qi2","ci2","qba","qda","qna","qp9","m06","m15","m20","yap","ykp","ylm","yhl","yhm","yrn","ysk","yui","yea","yla","ytu","yng","ycl","yhn","yrs","ypl","ylt","yld","yth","yul","yar","ytp","yuc","yml","yrg","yit","yow","yts","ylg","yvg","ymg","ytg","yhg","ylb","yvb","ymb","ytb","yhb","yh9","ysh","ypk","drb","drc","drd","dre","drf","bab","bac","bad","bae","baf","pab","pac","pad","pae","paf","neb","neg","ned","nee","nef","ci3","ci2","uap","ukp","ulm","uhl","uhm","urn","usk","uui","uea","ula","utu","ung","ucl","uhn","urs","upl","ult","uld","uth","uul","uar","utp","uuc","uml","urg","uit","uow","uts","ulg","uvg","umg","utg","uhg","ulb","uvb","umb","utb","uhb","uh9","ush","upk","yht","ydw","ylk","yrb","yhh","ylv","yft","yig","ybt","qi3","qdb","qnf","qbc","qbd","qbe","qdd","qde","qne","qpc","qpe","m06","m15","m20","hax","axe","2ax","mpi","wax","lax","bax","btx","gax","gix","wnd","ywn","bwn","gwn","clb","scp","gsc","wsp","spc","mac","mst","fla","whm","mau","gma","ssd","scm","sbr","flc","crs","bsd","lsd","wsd","2hs","clm","gis","bsw","flb","gsd","dgr","dir","kri","bld","tkf","tax","bkf","bal","jav","pil","ssp","glv","tsp","spr","tri","brn","spt","pik","bar","vou","scy","pax","hal","wsc","sst","lst","cst","bst","wst","sbw","hbw","lbw","cbw","sbb","lbb","swb","lwb","lxb","mxb","hxb","rxb","gps","ops","gpm","opm","gpl","opl","d33","g33","leg","hdm","hfh","hst","msf","ktr","wrb","axf","ces","clw","btl","skr","p01","p02","p03","p04","p05","p06","p07","p08","p09","p10","p11","p12","p13","p14","p15","p16","p17","p18","p19","p20","p21","p22","p23","p24","p25","p26","p27","p28","p29","p30","p31","p32","p33","p34","p35","p36","p37","p38","p39","p40","p41","p42","p43","p44","p45","p46","p47","p48","p49","p50","p51","p52","p53","p54","p55","p56","p57","p58","p59","p60","p61","p62","p63","p64","p65","p66","p67","p68","p69","p70","p71","ob1","ob2","ob3","ob4","ob5","am1","am2","am3","am4","am5","aq2","cq2","gsp","apb","nin","njt","bts","shc","nrd","nsy","syn","pbe","mnb","kkl","arm","q1a","q1b","q1c","q1d","q1e","q1f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","cr2","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","9ha","9ax","92a","9mp","9wa","9la","9ba","9bt","9ga","9gi","9wn","9yw","9bw","9gw","9cl","9sc","9qs","9ws","9sp","9ma","9mt","9fl","9wh","9m9","9gm","9ss","9sm","9sb","9fc","9cr","9bs","9ls","9wd","92h","9cm","9gs","9b9","9fb","9gd","9dg","9di","9kr","9bl","9tk","9ta","9bk","9b8","9ja","9pi","9s9","9gl","9ts","9sr","9tr","9br","9st","9p9","9b7","9vo","9s8","9pa","9h9","9wc","8ss","8ls","8cs","8bs","8ws","8sb","8hb","8lb","8cb","8s8","8l8","8sw","8lw","8lx","8mx","8hx","8rx","9ar","9wb","9xf","9cs","9lw","9tw","9qr","q00","q01","q02","q03","q04","q05","q06","q07","q08","q09","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q77","q78","q79","q83","ob6","ob7","ob8","ob9","oba","am6","am7","am8","am9","ama","aq2","cq2","9gp","9pb","9nn","9nj","9xb","9sh","9rd","9ns","9sy","9be","9mn","9kl","9rm","q2a","q2b","q2c","q2d","q2e","q2f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","0ha","0ax","82a","0mp","0wa","0la","0ba","0bt","0ga","0gi","0wn","0yw","0bw","0gw","0cl","5sc","0qs","0ws","0sp","0ma","0mt","0fl","0wh","0m0","0gm","0ss","0sm","0sb","0fc","0cr","0bs","0ls","0wd","02h","0cm","0gs","0b0","0fb","0gd","0dg","0di","0kr","0bl","0tk","0ta","0bk","0b6","0ja","0pi","0s9","0gl","0ts","0sr","0tr","0br","0st","0p0","0b7","0vo","0s8","0pa","0h0","0wc","1ss","1ls","1cs","1bs","1ws","1sb","1hb","1lb","1cb","1s8","1l8","1sw","1lw","1lx","1mx","1hx","1rx","7ar","7wb","7xf","7cs","7lw","7tw","7qr","7ha","7ax","72a","7mp","7wa","7la","7ba","7bt","7ga","7gi","7wn","7yw","7bw","7gw","7cl","7sc","7qs","7ws","7sp","7ma","7mt","7fl","7wh","7m7","7gm","7ss","7sm","7sb","7fc","7cr","7bs","7ls","7wd","72h","7cm","7gs","7b7","7fb","7gd","7dg","7di","7kr","7bl","7tk","7ta","7bk","7b8","7ja","7pi","7s7","7gl","7ts","7sr","7tr","7br","7st","7p7","7o7","7vo","7s8","7pa","7h7","7wc","6ss","6ls","6cs","6bs","6ws","6sb","6hb","6lb","6cb","6s7","6l7","6sw","6lw","6lx","6mx","6hx","6rx","obb","obc","obd","obe","obf","amb","amc","amd","ame","amf","aq2","cq2","0gp","0pb","0nn","0xb","0sh","0rd","0ns","0sy","0be","0mn","7tw","q74","q75","q76","q80","q81","q82","q84","q85","0kl","0rm","q3a","q3b","q3c","q3d","q3e","q3f","q4a","q4b","q4c","q4d","q4e","q4f","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","lbl","vbl","mbl","tbl","hbl","lbl","vbl","mbl","tbl","hbl","3lb","3vb","3mb","3tb","alb","avb","bmb","atb","ahb","alb","avb","bmb","atb","ahb","ulc","uvc","umc","utc","uhc","alb","avb","bmb","atb","ahb","yms","yms","yms","ulc","uvc","umc","utc","uhc","ulc","uvc","umc","utc","uhc","m10","zlb","zvb","zmb","ztb","zhb","zlb","zvb","zmb","ztb","zhb","5lb","5vb","5mb","5tb","5hb","zlb","zvb","zmb","ztb","zhb","xms","xms","xms","5lb","5vb","5mb","5tb","5hb","5lb","5vb","5mb","5tb","5hb","m10","3hb","lbl","vbl","mbl","tbl","hbl","msb","msb","msb","3lb","3vb","3mb","3tb","3hb","3lb","3vb","3mb","3tb","3hb","m10"},
+        quality = 6,
+        sockets = "0",
+        hide = true,
+        filter_levels = 4
+    },
+
+
+
+
 
     -- Rune Logic
     -- Low tier LOD Decals by strictness
