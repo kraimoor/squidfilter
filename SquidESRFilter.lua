@@ -13,11 +13,11 @@ return {
     {
 
     -- Debugging codes
-    --{   
-     --  codes = "allitems",
-     --   location = {"onplayer", "atvendor"},
-     --   suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
-    --},
+    {   
+      codes = "allitems",
+       location = {"onplayer", "atvendor"},
+       suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
+    },
 
     -- Consumables
     -- Hide utility potions
@@ -880,13 +880,13 @@ return {
 
     -- hide magic arrow/bolts on very and uber
     {
-        codes = {"cqv","cqv2","cq0","aq0","aq2","aqv"},
+        codes = {"cqv","cq2","cq0","aq0","aq2","aqv"},
         quality = "4-",
         hide = true,
         filter_levels = 3
     },
     {
-        codes = {"cqv","cqv2","cq0","aq0","aq2","aqv"},
+        codes = {"cqv","cq2","cq0","aq0","aq2","aqv"},
         quality = "4-",
         hide = true,
         filter_levels = 4
