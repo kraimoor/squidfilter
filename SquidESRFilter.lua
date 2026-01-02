@@ -1,12 +1,12 @@
---- Filter Title: SquidFilter Beta-Audio v07e
+--- Filter Title: SquidFilter Beta-Audio v08
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta-Audio v07e [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v08 [{yellow}Reloaded{red}]",
     debug = false,
     audioPlayback = true,
-    allowOverrides = false,
+    allowOverrides = true,
     filter_titles = {"Leveling","Strict","Very-Strict","Uber-Strict"},
     filter_level = 4,
     rules = 
@@ -15,9 +15,23 @@ return {
     -- Debugging codes
     --{   
     --  codes = "allitems",
-    --   location = {"onplayer", "atvendor"},
+    --   location = {"onplayer", "atvendor","equipped"},
     --   suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
     --},
+
+
+    -- Highlight and notifications for accidentally dropping things out of your inventory
+    {   
+        codes = {"box","led","ast","cm7","kv0","ky0","kb0","kg0","kr0","kw0","ks0","kk0","xu0","xu1","xu2","xu3","xu4","xu5","xu6","xu7","xu8","xu9","xux","xuy","s01","s02","s03","s04","s05","s06","s07","s08","s09","s10","s11","s12","s13","s14","s15","s16","s17","s18","s19","s20","s21","s22","s23","s24","s25","s26","s27","s28","s29","s30","s31","s32","s33","s34","s35","s36","s37","s38","s39","s40","s41","s42","s43","s44","s45","s46","s50","t51","t52","t53","t54","t55","t56","t57","t58","t59","t60","t61","t62","t63","t64","t65","t66","t67","t68","t69","t70","t71","t72","t73","t74","t75","t76","s51","s52","s53","s54","s55","s56","s57","s58","s59","s60","s61","s62","s63","s64","s65","s66","s67","s68","s69","s70","s71","s72","s73","s74","s75","s76","s77","s78","s79","s80","s81","s82","s83","t01","t02","t03","t04","t05","t06","t07","t08","t09","t10","t11","t12","t13","t14","t15","t16","t17","t18","t19","t20","t21","t22","t23","t24","t25","t26","t27","t28","t29","t30","ko0","ko1","ko2","ko3","ko4","ko5","cm9"},
+        audio = "You dropped something",
+        notify = "{red}!!! You dropped something important !!!",
+        prefix = "{black}!!! ",
+        suffix = " !!!",
+        background = {255, 50, 50, 255},
+        border = {0, 0, 0, 255, 10},
+    },
+
+
 
     -- Consumables
     -- Hide utility potions
@@ -768,10 +782,8 @@ return {
     {
         codes = {"7wd","m01","m02","m03","m04","m05","m07","m08","m09","m11","m12","m13","m14","m16","m17","m18","dd1","m21","m22","m23","m24","m25","m26","m27","m28","m29","m30","m31","m32","m33","m34","m35","m36","m37","m38","mam","mrn","m10","m06","m20","m15"},
         quality = "4-",
-        --notify = "Mythical Base!!",
         --name_style = "Rainbow",
         background = {0, 0, 0, 255},
-        --background_style = "Rainbow",
         border = {255, 0, 0, 255, 8},
         suffix = " {lilac}[{sockets}]"
     },
@@ -1115,6 +1127,3 @@ return {
 
     }
 }
-
-
-
