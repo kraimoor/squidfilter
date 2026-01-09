@@ -39,25 +39,12 @@ return {
     },
     -- Hide hp, mana, scrolls 
     {
-        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
+        codes = { "hp5" },
         hide = false,
-        filter_levels = 1
     },
     {
-        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
+        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "isc", "tsc"},
         hide = true,
-        filter_levels = 2
-    },
-    {
-        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
-        hide = true,
-        filter_levels = 3
-    },
-    
-    {
-        codes = { "mp0", "mp1", "mp2", "mp3", "mp4", "mp5", "hp0", "hp1", "hp2", "hp3", "hp4", "hp5", "isc", "tsc"},
-        hide = true,
-        filter_levels = 4
     },
 
     -- Small Rejuv
