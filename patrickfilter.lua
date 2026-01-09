@@ -862,7 +862,6 @@ return {
     },
 
 
-
     -- hide magic arrow/bolts on very and uber
     {
         codes = {"cqv","cq2","cq0","aq0","aq2","aqv"},
@@ -1006,8 +1005,6 @@ return {
         hide = true,
         filter_levels = "3+",
     },
-    
-
 
 
 
