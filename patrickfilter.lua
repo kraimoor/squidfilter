@@ -714,7 +714,7 @@ return {
     {
         notify = "High ESR Rune!",
         audio = "High ESR Rune",
-        codes = {"r43","r44","r45","r46","r84","r85","r86","r87","r88","r89","r90","r91","r92","r93","r94","r95","r96","r97"}
+        codes = {"r14","r21","r28","r35","r42","r45","r46","r50","r84","r85","r86","r87","r88","r89","r90","r91","r92","r93","r94","r95","r96","r97"}
     },
 
     -- Notify unique rings, amulets, charms
