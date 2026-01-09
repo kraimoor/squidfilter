@@ -114,7 +114,7 @@ return {
         suffix = " *"
     }, 
 
-    -- Hide Decpihers for uber-strict
+    -- Hide Decpihers
 
     {   
         code = "ddd",
