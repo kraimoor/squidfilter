@@ -709,8 +709,7 @@ return {
     {
         notify = "High LOD Rune Decal!",
         audio = "High LOD Rune",
-        codes = {"23l","24l","25l","26l","27l","28l","29l","30l","31l","32l","33l"}
-        
+        codes = {"30l","31l","32l","33l"}
     },
     {
         notify = "High ESR Rune!",
