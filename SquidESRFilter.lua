@@ -1,9 +1,9 @@
---- Filter Title: SquidFilter Beta-Audio v08d
+--- Filter Title: SquidFilter Beta-Audio v08e
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta-Audio v08d [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v08e [{yellow}Reloaded{red}]",
     debug = false,
     audioPlayback = true,
     allowOverrides = false,
@@ -15,8 +15,8 @@ return {
     -- Debugging codes
     --{   
     --  codes = "allitems",
-    --   location = {"onplayer", "atvendor","equipped"},
-     --  suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
+    --  location = {"onplayer", "atvendor","equipped"},
+    --  suffix = "\n{red}Quality: {quality}\nRarity: {rarity}\nCode: {code}",
     --},
 
 
@@ -739,7 +739,7 @@ return {
     {
         notify = "High ESR Rune!",
         audio = "High ESR Rune",
-        codes = {"r43","r44","r45","r46","r84","r85","r86","r87","r88","r89","r90","r91","r92","r93","r94","r95","r96","r97"}
+        codes = {"r43","r44","r45","r46","r50","r84","r85","r86","r87","r88","r89","r90","r91","r92","r93","r94","r95","r96","r97"}
     },
 
     -- Notify unique rings, amulets, charms
