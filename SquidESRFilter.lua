@@ -1,9 +1,9 @@
---- Filter Title: SquidFilter Beta-Audio v08e
+--- Filter Title: SquidFilter Beta-Audio v08f
 --- Filter Type: MultiStrict
 --- Filter Description: Multi-level filter
 --- Filter Link: https://raw.githubusercontent.com/kraimoor/squidfilter/refs/heads/main/SquidESRFilter.lua
 return {
-    reload = "{red}SquidFilter Beta-Audio v08e [{yellow}Reloaded{red}]",
+    reload = "{red}SquidFilter Beta-Audio v08f [{yellow}Reloaded{red}]",
     debug = false,
     audioPlayback = true,
     allowOverrides = false,
@@ -114,7 +114,7 @@ return {
         border = { 255, 255, 255, 255, 2 }
     },
     {
-        codes = {"jew","cm1","cm2","cm3"},
+        codes = {"jew","cm1","cm2","cm3","cm4"},
         quality = "6",
         border = {200, 200, 100, 255, 1},
     },
@@ -756,7 +756,7 @@ return {
         notify = "Charming!",
         audio = "Charm",
         quality = 7,
-        codes = {"cm1","cm2","cm3"}
+        codes = {"cm1","cm2","cm3","cm4"}
     },
 
     -- Socket info for ground items
